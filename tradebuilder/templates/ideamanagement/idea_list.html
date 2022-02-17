@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<style>
+
+
+.title {
+ 
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+     
+}
+.card {
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,255,0,1) 0%, rgba(34,238,136,1) 0%, rgba(0,212,255,1) 100%); 
+ 
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top:20px;
+}
+
+
+
+.btn {
+  margin-top: auto;
+}
+
+
+</style>
+
+
+
+{% for i in categories.ideas.all %}
+
+
+ {{ forloop.counter }}
+
+
+
+
+{% if forloop.counter > 0 and forloop.counter <  3  %}
+
+<h1> {{ i.title }}  </h1>
+
+{% endif %}
+  
+  
+{% endfor %}
+  
+
+
+
+
+{% endblock content %}
